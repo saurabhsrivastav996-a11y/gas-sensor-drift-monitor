@@ -1,0 +1,6 @@
+SensorChannel,SensorMaterial,NominalTarget,ReferenceChannel,ReferenceTarget,CanCompareTrend,ComparisonNote
+PT08.S1(CO),Tin oxide response,CO,CO(GT),CO,True,Use independently median-indexed trends for directional context; raw units differ.
+PT08.S2(NMHC),Titania response,NMHC,NMHC(GT),NMHC,True,Use independently median-indexed trends for directional context; raw units differ.
+PT08.S3(NOx),Tungsten oxide response,NOx,NOx(GT),NOx,True,Use independently median-indexed trends for directional context; raw units differ.
+PT08.S4(NO2),Tungsten oxide response,NO2,NO2(GT),NO2,True,Use independently median-indexed trends for directional context; raw units differ.
+PT08.S5(O3),Indium oxide response,O3,,No direct reference supplied,False,Dataset supplies no matching O3 reference-analyzer channel.

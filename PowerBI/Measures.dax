@@ -1,0 +1,51 @@
+-- Add each measure to the SensorMonitoring table in Power BI.
+Total Sensor Hours =
+COUNTROWS ( 'SensorMonitoring' )
+
+Sensor Missing Rate =
+DIVIDE (
+    CALCULATE (
+        COUNTROWS ( 'SensorMonitoring' ),
+        'SensorMonitoring'[SensorMissing] = TRUE ()
+    ),
+    [Total Sensor Hours]
+)
+
+Reference Missing Rate =
+DIVIDE (
+    CALCULATE (
+        COUNTROWS ( 'SensorMonitoring' ),
+        'SensorMonitoring'[ReferenceMissing] = TRUE ()
+    ),
+    [Total Sensor Hours]
+)
+
+Sensor Point Flags =
+CALCULATE (
+    COUNTROWS ( 'SensorMonitoring' ),
+    'SensorMonitoring'[SensorPointFlag] = TRUE ()
+)
+
+Reference Point Flags =
+CALCULATE (
+    COUNTROWS ( 'SensorMonitoring' ),
+    'SensorMonitoring'[ReferencePointFlag] = TRUE ()
+)
+
+Sustained Divergence Candidate Hours =
+CALCULATE (
+    COUNTROWS ( 'SensorMonitoring' ),
+    'SensorMonitoring'[DriftCandidate] = TRUE ()
+)
+
+Sensor Trend Index =
+AVERAGE ( 'SensorMonitoring'[SensorIndex100] )
+
+Reference Trend Index =
+AVERAGE ( 'SensorMonitoring'[ReferenceIndex100] )
+
+Mean Temperature C =
+AVERAGE ( 'SensorMonitoring'[TemperatureC] )
+
+Mean Relative Humidity Pct =
+AVERAGE ( 'SensorMonitoring'[RelativeHumidityPct] )
